@@ -8,12 +8,10 @@ parameters:
   method:
     type: string
     default: 'GET'
-    immutable: true
     required: true
   endpointurl:
     type: string
     default: '/organizations'
-    immutable: true
     required: true
   queryString:
     type: string
