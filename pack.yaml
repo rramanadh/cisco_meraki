@@ -1,0 +1,9 @@
+---
+ref: cisco_meraki
+name: cisco_meraki
+description: Cisco Meraki Stack Storm Rest
+keywords:
+  - cisco
+version: 0.0.1
+author: Ramanadh Ravinuthala
+email: rravinuthala@gmail.com
