@@ -11,7 +11,7 @@ class CiscoMerakiAction(Action):
     def __init__(self, config):
         super(CiscoMerakiAction, self).__init__(config)
         self.params = None
-        self.accesstoken = self.config.get('access_token', '')
+        self.accesstoken = ''
         self.base_url = self.config.get('base_url', 'https://dashboard.meraki.com/api/v0/')
 
     def handleRequestAuth(self, headers):
@@ -27,8 +27,9 @@ class CiscoMerakiAction(Action):
                 url += "?" + query
         return url
 
-    def doRequest(self, method, endpointURL, queryString=None, data=None):
+    def doRequest(self, method, endpointURL, queryString=None, data=None, access_token=''):
         self.method = method
+        self.accesstoken = access_token
         self.endpointURL = self.base_url + endpointURL
         self.queryString = queryString
         self.data = data.encode('ascii', 'ignore') if isinstance(data, unicode) else data

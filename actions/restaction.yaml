@@ -19,3 +19,6 @@ parameters:
   data:
     type: string
     default: ''
+  companyId:
+    type: string
+    default: ''
